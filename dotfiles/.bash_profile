@@ -1,3 +1,9 @@
+## git completion (run brew install bash-completion first)
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
+
+## branch name in prompt
 function parse_git_branch {
 
         git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
