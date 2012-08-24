@@ -38,6 +38,12 @@ Vetting tools often takes just as long or longer than actually using them. So to
 - [Classic Color Meter](http://itunes.apple.com/us/app/classic-color-meter/id451640037?mt=12)
 - [Transmit](http://panic.com/transmit/)
 - [Notational Velocity](http://notational.net/)
+- [Growl](http://growl.info/)
+- [Divvy](http://mizage.com/divvy/)
+- [1Password](https://agilebits.com/onepassword)
+- [Cloud](http://getcloudapp.com/)
+- [Byword](http://bywordapp.com/)
+- [Alfred](http://www.alfredapp.com/)
 
 ---
 
