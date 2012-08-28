@@ -1,9 +1,9 @@
 Stylesheet Style Guidelines
 ===========================
 
-``
+```
 WIP
-``
+```
 
 ## General Coding Style
 - Use soft-tabs with a two space indent.
@@ -11,11 +11,13 @@ WIP
 - Put spaces before `{` in rule declarations.
 - Use hex color codes `#fd0` unless using rgba.
 
-		.style-format {
-			border: 1px solid #d00;
-			color: #d00;
-			background: #fd0;
-		}
+```
+.style-format {
+  border: 1px solid #d00;
+  color: #d00;
+  background: #fd0;
+}
+```
 		
 tips:
 - use [EditorConfig](http://editorconfig.org/) to keep indentation consistent
@@ -24,13 +26,13 @@ tips:
 Separate discrete sections of stylesheets with section comment blocks.
 
 Example:
-``
+```
 /* -----------------------------------
- 	 		Section comment block
+       Section comment block
 -------------------------------------- */
  	
 /* Basic comment */
-``
+```
 		
 		
 ## SASS Style
@@ -41,7 +43,7 @@ Example:
 ## File Organization
 In general, the stylesheet file organization should look something like this:
 
-``
+```
 css
 |—— lib
 |   |—— normalize.scss
@@ -56,7 +58,7 @@ css
 |—— _grid.scss
 |—— _media-queries.scss
 |—— site.scss
-``
+```
 	
 Try and seperate partials into those that do, and those that don’t render anything. For those that don’t, prepend the filename with a `$`, `@`, or `%` to indicate it can safely be imported without repeating/generating content.
 
