@@ -54,6 +54,13 @@ Vetting tools often takes just as long or longer than actually using them. So to
 ---
 
 # Shiny Toys
+These look like they're cool, but haven't found their way into my day-to-day workflow yet.
+
+### [postgres app](http://postgresapp.com/)
+Dead simple instal and running of postgres
+
+### [induction](http://inductionapp.com/)
+A polyglot database client for mac
 
 ### [fluid.ui](https://www.fluidui.com)
 Create mockups of mobile apps in browser
