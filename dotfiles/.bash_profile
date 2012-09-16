@@ -13,10 +13,10 @@ function parse_git_branch {
 function proml {
 
   local       GREEN="\[\033[0;32m\]"
-
+  local     EMK="\[\033[1;30m\]"
   local     DEFAULT="\[\033[0m\]"
 
-PS1="\W$GREEN\$(parse_git_branch) $DEFAULT\$ "
+PS1="\W$GREEN\$(parse_git_branch)$EMK →$DEFAULT "
 
 }
 
