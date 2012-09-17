@@ -32,6 +32,11 @@ Example:
 -------------------------------------- */
  	
 /* Basic comment */
+
+/*
+** A comment that occupies
+** multiple lines
+*/
 ```
 		
 		
