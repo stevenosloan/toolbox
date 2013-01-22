@@ -39,6 +39,7 @@ Vetting tools often takes just as long or longer than actually using them. So to
   - [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter)
   - [Editor Config](http://editorconfig.org/)
   - [Sublime Files](https://github.com/al63/SublimeFiles)
+  - GitGutter
 
 - [ImageOptim](http://imageoptim.com/)
 - [Classic Color Meter](http://itunes.apple.com/us/app/classic-color-meter/id451640037?mt=12)
