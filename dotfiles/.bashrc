@@ -1,5 +1,6 @@
 # Aliases
 alias flushdns="dscacheutil -flushcache; echo 'done';"
+alias apache="sudo apachectl"
 
 # Set Colours for Folders
 export CLICOLOR=1
