@@ -1,6 +1,7 @@
 # Aliases
 alias flushdns="dscacheutil -flushcache; echo 'done';"
 alias apache="sudo apachectl"
+alias pythonserver="python -m SimpleHTTPServer 8000"
 
 # Set Colours for Folders
 export CLICOLOR=1
