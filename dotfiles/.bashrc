@@ -2,6 +2,7 @@
 alias flushdns="dscacheutil -flushcache; echo 'done';"
 alias apache="sudo apachectl"
 alias pythonserver="python -m SimpleHTTPServer 8000"
+alias middleman_pid="lsof -w -n -i tcp:4567"
 
 # Set Colours for Folders
 export CLICOLOR=1
