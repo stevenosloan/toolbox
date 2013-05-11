@@ -1,14 +1,14 @@
 
-#  	Table of Contents
+#   Table of Contents
 #
-#		1.	Path Manipulation
-#		2.	Aliases
-# 	3.	Prompt Adjustments
+#   1.  Path Manipulation
+#   2.  Aliases
+#   3.  Prompt Adjustments
 # --------------------------------------------------------------
 
 
 
-# 	1.	Path Manipulation
+#   1.  Path Manipulation
 # --------------------------------------------------------------
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$HOME/bin
@@ -24,7 +24,7 @@ export NODE_PATH=/usr/local/bin
 [[ -s /Users/stevensloan/.nvm/nvm.sh ]] && . /Users/stevensloan/.nvm/nvm.sh
 
 
-# 	2.	Aliases
+#   2.  Aliases
 # --------------------------------------------------------------
 
 alias flushdns="dscacheutil -flushcache; echo 'done';"
@@ -33,11 +33,11 @@ alias pythonserver="python -m SimpleHTTPServer 8000"
 alias middleman_pid="lsof -w -n -i tcp:4567"
 
 if hash hub 2>/dev/null; then
-	alias git=hub
+  alias git=hub
 fi
 
 
-# 	3.	Prompt Adjustments
+#   3.  Prompt Adjustments
 # --------------------------------------------------------------
 
 # Set Colours for Folders
