@@ -1,8 +1,44 @@
-# Aliases
+
+#  	Table of Contents
+#
+#		1.	Path Manipulation
+#		2.	Aliases
+# 	3.	Prompt Adjustments
+# --------------------------------------------------------------
+
+
+
+# 	1.	Path Manipulation
+# --------------------------------------------------------------
+
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$HOME/bin
+
+# RVM
+export PATH=$PATH:$HOME/.rvm/bin
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+# NODE Js
+export NODE_PATH=/usr/local/bin
+
+# NVM
+[[ -s /Users/stevensloan/.nvm/nvm.sh ]] && . /Users/stevensloan/.nvm/nvm.sh
+
+
+# 	2.	Aliases
+# --------------------------------------------------------------
+
 alias flushdns="dscacheutil -flushcache; echo 'done';"
 alias apache="sudo apachectl"
 alias pythonserver="python -m SimpleHTTPServer 8000"
 alias middleman_pid="lsof -w -n -i tcp:4567"
+
+if hash hub 2>/dev/null; then
+	alias git=hub
+fi
+
+
+# 	3.	Prompt Adjustments
+# --------------------------------------------------------------
 
 # Set Colours for Folders
 export CLICOLOR=1
@@ -27,16 +63,3 @@ function proml {
 }
 
 proml
-
-# Path Manipulation
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$HOME/bin
-
-# RVM
-export PATH=$PATH:$HOME/.rvm/bin
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-# NODE Js
-export NODE_PATH=/usr/local/bin
-
-# NVM
-[[ -s /Users/stevensloan/.nvm/nvm.sh ]] && . /Users/stevensloan/.nvm/nvm.sh
