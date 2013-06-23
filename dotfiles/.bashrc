@@ -54,12 +54,23 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
 }
 
+function parse_git_status {
+  status=`git status | grep "nothing to commit" 2> /dev/null`
+	dirty_marker="Δ"
+	clean_marker=""
+
+	if [ "$status" != "nothing to commit, working directory clean" ] ; then
+		echo " $dirty_marker"
+	fi
+}
+
 function proml {
   local  GREEN="\[\033[0;32m\]"
   local  EMK="\[\033[1;30m\]"
+  local  TEAL="\033[0;36m\]"
   local  DEFAULT="\[\033[0m\]"
 
-  PS1="\W$GREEN\$(parse_git_branch)$EMK →$DEFAULT "
+  PS1="\W$GREEN\$(parse_git_branch)$TEAL\$(parse_git_status)$EMK → $DEFAULT"
 }
 
 proml
