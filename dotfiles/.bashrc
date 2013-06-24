@@ -55,13 +55,13 @@ function parse_git_branch {
 }
 
 function parse_git_status {
-  status=`git status | grep "nothing to commit" 2> /dev/null`
-	dirty_marker="Δ"
-	clean_marker=""
+  status=`git status 2> /dev/null | grep "nothing to commit"`
+  dirty_marker="Δ"
+  clean_marker=""
 
-	if [ "$status" != "nothing to commit, working directory clean" ] ; then
-		echo " $dirty_marker"
-	fi
+  if [ "$status" != "nothing to commit, working directory clean" ] ; then
+    echo " $dirty_marker"
+  fi
 }
 
 function proml {
