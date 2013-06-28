@@ -1,4 +1,3 @@
-
 #   Table of Contents
 #
 #   1.  Path Manipulation
@@ -55,9 +54,15 @@ function parse_git_branch {
 }
 
 function parse_git_status {
+  # check if we're in a git repo
+  is_git=`git status 2> /dev/null`
+  if [ -z "$is_git" ] ; then
+    return 1
+  fi
+
+  # check if there are changes
   status=`git status 2> /dev/null | grep "nothing to commit"`
   dirty_marker="Δ"
-  clean_marker=""
 
   if [ "$status" != "nothing to commit, working directory clean" ] ; then
     echo " $dirty_marker"
