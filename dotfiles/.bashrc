@@ -29,7 +29,9 @@ export NODE_PATH=/usr/local/bin
 alias flushdns="dscacheutil -flushcache; echo 'done';"
 alias apache="sudo apachectl"
 alias pythonserver="python -m SimpleHTTPServer 8000"
+alias server="ruby -run -e httpd . -p5000"
 alias middleman_pid="lsof -w -n -i tcp:4567"
+alias chrome="open /Applications/Google\ Chrome.app"
 
 if hash hub 2>/dev/null; then
   alias git=hub
