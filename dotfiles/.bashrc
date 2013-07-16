@@ -71,13 +71,12 @@ function parse_git_status {
   fi
 }
 
-function proml {
-  local  GREEN="\[\033[0;32m\]"
-  local  EMK="\[\033[1;30m\]"
-  local  TEAL="\033[0;36m\]"
-  local  DEFAULT="\[\033[0m\]"
+function format_prompt {
+  local  GREEN="\[\e[32m\]"
+  local  EMK="\[\e[30m\]"
+  local  TEAL="\[\e[36m\]"
+  local  DEFAULT="\[\e[0m\]"
 
-  PS1="\W$GREEN\$(parse_git_branch)$TEAL\$(parse_git_status)$EMK → $DEFAULT"
+  export PS1="\W$GREEN\$(parse_git_branch)$TEAL\$(parse_git_status)$EMK → $DEFAULT"
 }
-
-proml
+format_prompt
