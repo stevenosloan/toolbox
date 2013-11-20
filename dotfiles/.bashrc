@@ -31,6 +31,7 @@ alias apache="sudo apachectl"
 alias pythonserver="python -m SimpleHTTPServer 8000"
 alias server="ruby -run -e httpd . -p5000"
 alias middleman_pid="lsof -w -n -i tcp:4567"
+alias response_time="curl -o /dev/null -s -w '%{time_total}\\n'"
 alias chrome="open /Applications/Google\ Chrome.app"
 
 if hash hub 2>/dev/null; then
