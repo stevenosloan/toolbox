@@ -6,21 +6,25 @@
 # --------------------------------------------------------------
 
 
-
 #   1.  Path Manipulation
 # --------------------------------------------------------------
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$HOME/bin
 
-# RVM
-export PATH=$PATH:$HOME/.rvm/bin
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+# Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
 
 # NODE Js
 export NODE_PATH=/usr/local/bin
 
 # NVM
 [[ -s /Users/stevensloan/.nvm/nvm.sh ]] && . /Users/stevensloan/.nvm/nvm.sh
+
+# PHP/Composer
+export PATH="~/.composer/vendor/bin:$PATH"
+
+# RVM
+export PATH="$PATH:$HOME/.rvm/bin"
 
 
 #   2.  Aliases
@@ -34,6 +38,12 @@ alias middleman_pid="lsof -w -n -i tcp:4567"
 alias kill_middleman="middleman_pid | grep -m 1 'ruby' | perl -pe 's/ruby\s+(\d+)(.+)/$1/g' | xargs kill -9"
 alias response_time="curl -o /dev/null -s -w '%{time_total}\\n'"
 alias chrome="open /Applications/Google\ Chrome.app"
+
+  # rails workflows
+
+# http://robots.thoughtbot.com/workflows-for-writing-migrations-with-rollbacks-in-mind
+alias migrate="rake db:migrate db:rollback && rake db:migrate"
+
 
 if hash hub 2>/dev/null; then
   alias git=hub
@@ -82,3 +92,8 @@ function format_prompt {
   export PS1="\W$GREEN\$(parse_git_branch)$TEAL\$(parse_git_status)$EMK → $DEFAULT"
 }
 format_prompt
+
+# load .bashrc.local if it exists
+if [ -f ~/.bashrc.local ]; then
+   source ~/.bashrc.local
+fi
