@@ -39,11 +39,29 @@ alias kill_middleman="middleman_pid | grep -m 1 'ruby' | perl -pe 's/ruby\s+(\d+
 alias response_time="curl -o /dev/null -s -w '%{time_total}\\n'"
 alias chrome="open /Applications/Google\ Chrome.app"
 
-  # rails workflows
+
+### rails workflows
 
 # http://robots.thoughtbot.com/workflows-for-writing-migrations-with-rollbacks-in-mind
-alias migrate="rake db:migrate db:rollback && rake db:migrate"
 
+function migrate {
+  rake db:migrate db:rollback
+  if [ $? -eq 0 ] ; then
+    rake db:migrate
+    try_annotate
+  fi
+}
+
+function try_annotate {
+  if hash annotate 2>/dev/null; then
+    annotate
+  else
+    echo '"annotate" is unavailable. consider installing the gem'
+  fi
+}
+
+
+### alias git to hub
 
 if hash hub 2>/dev/null; then
   alias git=hub
