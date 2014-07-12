@@ -26,6 +26,9 @@ export PATH="~/.composer/vendor/bin:$PATH"
 # RVM
 export PATH="$PATH:$HOME/.rvm/bin"
 
+# Add Dotrepo
+export PATH="$PATH:$HOME/.dotrepo/bin"
+
 
 #   2.  Aliases
 # --------------------------------------------------------------
