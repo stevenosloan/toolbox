@@ -46,6 +46,10 @@ function kill_middleman {
   middleman_pid | grep -m 1 'ruby' | perl -pe 's/ruby\s+(\d+)(.+)/$1/g' | xargs kill -9
 }
 
+function mkcd {
+  mkdir -p $1 && cd $1
+}
+
 function jump {
   if hash autojump 2>/dev/null; then
     dir=`autojump $1`
