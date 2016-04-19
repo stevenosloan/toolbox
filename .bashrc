@@ -41,6 +41,8 @@ alias middleman_pid="lsof -w -n -i tcp:4567"
 alias response_time="curl -o /dev/null -s -w '%{time_total}\\n'"
 alias chrome="open /Applications/Google\ Chrome.app"
 alias subldots="subl `dotrepo repo`"
+alias clear_logs="sudo rm -rf /private/var/log/asl/*.asl"
+alias fe="rustc"
 
 function kill_middleman {
   middleman_pid | grep -m 1 'ruby' | perl -pe 's/ruby\s+(\d+)(.+)/$1/g' | xargs kill -9
