@@ -44,6 +44,16 @@ alias subldots="subl `dotrepo repo`"
 alias clear_logs="sudo rm -rf /private/var/log/asl/*.asl"
 alias fe="rustc"
 
+function mkpwd {
+  if [[ -z "$1" ]]; then
+    length=12
+  else
+    length="$1"
+  fi
+
+  openssl rand -base64 "$length"
+}
+
 function kill_middleman {
   middleman_pid | grep -m 1 'ruby' | perl -pe 's/ruby\s+(\d+)(.+)/$1/g' | xargs kill -9
 }
