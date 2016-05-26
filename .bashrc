@@ -79,7 +79,7 @@ function jump {
 function migrate {
   rake db:migrate db:rollback
   if [ $? -eq 0 ] ; then
-    rake db:migrate
+    rake db:migrate db:test:prepare
     try_annotate
   fi
 }
