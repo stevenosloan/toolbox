@@ -44,6 +44,7 @@ alias subldots="subl `dotrepo repo`"
 alias clear_logs="sudo rm -rf /private/var/log/asl/*.asl"
 alias fe="rustc"
 alias difff="git diff --color | diff-so-fancy"
+alias tab="open . -a iterm"
 
 function mkpwd {
   if [[ -z "$1" ]]; then
