@@ -46,6 +46,23 @@ alias fe="rustc"
 alias difff="git diff --color | diff-so-fancy"
 alias tab="open . -a iterm"
 
+function delete_remote_tag {
+  git push --delete origin $1
+}
+
+function delete_merged_branches {
+  git branch --merged |
+  egrep -v "(^\*|master|dev)" |
+  while read -r line; do
+    echo -n "Delete branch '$line'? (N|y) "
+    read answer < /dev/tty
+
+    if [[ "$answer" == "y" ]]; then
+      git branch -d "$line"
+    fi
+  done
+}
+
 function mkpwd {
   if [[ -z "$1" ]]; then
     length=12
