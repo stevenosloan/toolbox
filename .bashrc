@@ -81,16 +81,6 @@ function mkcd {
   mkdir -p $1 && cd $1
 }
 
-function jump {
-  if hash autojump 2>/dev/null; then
-    dir=`autojump $1`
-    cd $dir
-  else
-    echo "you should install 'autojump'"
-  fi
-}
-
-
 ### rails workflows
 
 # http://robots.thoughtbot.com/workflows-for-writing-migrations-with-rollbacks-in-mind
