@@ -137,18 +137,20 @@ function parse_git_status {
   status=`git status 2> /dev/null | grep "nothing to commit"`
   dirty_marker="Δ"
 
-  if [ "$status" != "nothing to commit, working directory clean" ] ; then
+  if [ "$status" != "nothing to commit, working tree clean" ] ; then
     echo " $dirty_marker"
+  else
+    echo " →"
   fi
 }
 
 function format_prompt {
   local  GREEN="\[\e[32m\]"
-  local  EMK="\[\e[30m\]"
+  local  EMK="\[\e[20m\]"
   local  TEAL="\[\e[36m\]"
   local  DEFAULT="\[\e[0m\]"
 
-  export PS1="\W$GREEN\$(parse_git_branch)$TEAL\$(parse_git_status)$EMK → $DEFAULT"
+  export PS1="\W$GREEN\$(parse_git_branch)$TEAL\$(parse_git_status) $DEFAULT"
 }
 format_prompt
 
